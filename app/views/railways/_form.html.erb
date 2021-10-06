@@ -1,0 +1,37 @@
+<%= form_with(model: railway, local: true) do |form| %>
+  <% if railway.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(railway.errors.count, "error") %> prohibited this railway from being saved:</h2>
+
+      <ul>
+      <% railway.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_of_railway_line %>
+    <%= form.text_field :name_of_railway_line %>
+  </div>
+
+  <div class="field">
+    <%= form.label :station_name %>
+    <%= form.text_field :station_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :how_many_minutes_walk %>
+    <%= form.text_field :how_many_minutes_walk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.text_field :property_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
